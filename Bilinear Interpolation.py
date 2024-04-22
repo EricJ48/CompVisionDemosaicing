@@ -191,8 +191,8 @@ def error(Bilinear, HighQuality, Color): #error function for demosaicing methods
     HQ_MSE = np.sum(np.square(Color - HighQuality)) / (Color.shape[0] * Color.shape[1])
 
     #calculate Peak Signal to Noise Ratio of Bilinear and High Quality Interpolation
-    Bilinear_PSNR = 10*np.log10(255/Bilinear_MSE)
-    HQ_PSNR = 10*np.log10(255/HQ_MSE)
+    Bilinear_PSNR = 10*np.log10(255**2/Bilinear_MSE)
+    HQ_PSNR = 10*np.log10(255**2/HQ_MSE)
 
     #print data
     print('Bilinear Interpolation Data')
